@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 9 feb 2023 11:38:30 by Hibernate Tools 5.6.14.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="instituto" name="modelo.ContactInfo" optimistic-lock="none" table="contactInfo">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="modelo.Profesor" fetch="select" 
+        name="profesor">
+            <column name="profesorId" not-null="true" 
+            unique="true"/>
+        </many-to-one>
+        <property name="email" type="string">
+            <column name="email" not-null="true"/>
+        </property>
+        <property name="tlfMovil" type="string">
+            <column length="15" name="tlf_movil"/>
+        </property>
+    </class>
+</hibernate-mapping>
